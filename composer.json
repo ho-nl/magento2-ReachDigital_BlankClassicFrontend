@@ -1,0 +1,17 @@
+{
+    "name": "reach-digital/magento2-qplus",
+    "description": "",
+    "require": {
+        "php": "~8.1.0",
+        "magento/product-community-edition": "^2.4"
+    },
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "ReachDigital\\QPlus\\": ""
+        }
+    }
+}
