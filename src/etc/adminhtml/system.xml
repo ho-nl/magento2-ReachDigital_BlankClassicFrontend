@@ -13,7 +13,7 @@
             <label>Blank Classic Frontend</label>
             <tab>reach_digital_config</tab>
             <resource>Magento_Config::config_general</resource>
-            <group id="graphql_mesh" translate="label" sortOrder="10" showInDefault="1">
+            <group id="general" translate="label" sortOrder="10" showInDefault="1">
                 <label>General configuration</label>
                 <field id="should_redirect" translate="label" type="select" sortOrder="10" showInDefault="1">
                     <label>Redirect</label>
