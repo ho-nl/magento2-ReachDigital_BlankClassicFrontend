@@ -1,5 +1,5 @@
 {
-    "name": "reach-digital/magento2-qplus",
+    "name": "reach-digital/magento2-blank-classic-frontend",
     "description": "",
     "require": {
         "php": "~8.1.0",
