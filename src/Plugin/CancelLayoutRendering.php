@@ -32,7 +32,7 @@ class CancelLayoutRendering
     public function afterGetOutput($subject, $result) {
         if ($this->_state->getAreaCode() == Area::AREA_FRONTEND) {
             if($this->_scopeConfig->isSetFlag("blank_classic_frontend/general/should_redirect")) {
-                $base_link_url = $this->_scopeConfig->getValue('web/secure/base_link_url');
+                $base_link_url = $this->_scopeConfig->getValue('web/secure/base_link_url', "store");
                 return sprintf('<meta http-equiv="refresh" content="0;url=%s">', $base_link_url);
             } else {
                 return '';
