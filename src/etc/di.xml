@@ -3,4 +3,7 @@
     <type name="Magento\Framework\View\Layout">
         <plugin name="ReachDigitalCancelFrontendLayoutRendering" type="ReachDigital\BlankClassicFrontend\Plugin\CancelLayoutRendering"/>
     </type>
+    <type name="Magento\Framework\View\Page\Config">
+        <plugin name="ReachDigitalForceNoIndex" type="ReachDigital\BlankClassicFrontend\Plugin\ForceNoIndex"/>
+    </type>
 </config>

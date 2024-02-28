@@ -9,16 +9,30 @@
             <label>Reach Digital</label>
         </tab>
 
-        <section id="blank_classic_frontend" translate="label" type="text" sortOrder="10" showInDefault="1">
+        <section id="blank_classic_frontend" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Blank Classic Frontend</label>
             <tab>reach_digital_config</tab>
             <resource>Magento_Config::config_general</resource>
-            <group id="general" translate="label" sortOrder="10" showInDefault="1">
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General configuration</label>
-                <field id="should_redirect" translate="label" type="select" sortOrder="10" showInDefault="1">
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <comment>Enables the module</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="noindex_nofollow" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Block Indexing</label>
+                    <comment>When enabled, forces the robots meta tag to NOINDEX,NOFOLLOW</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="should_redirect" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Redirect</label>
                     <comment>When enabled, redirects requests on the classic frontend to the Secure Base Link URL (web/secure/base_link_url)</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="custom_redirect" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Redirect URL</label>
+                    <comment>When given, uses this URL for the frontend redirects instead of the base link URL</comment>
                 </field>
             </group>
         </section>
