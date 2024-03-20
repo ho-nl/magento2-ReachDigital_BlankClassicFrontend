@@ -3,7 +3,7 @@ Blanks out the classic Magento 2 frontend, without affecting APIs that are imple
 
 ## Installation
 ```sh
-composer install reach-digital/magento2-blank-classic-frontend
+composer require reach-digital/magento2-blank-classic-frontend
 ```
 
 ## Configuration
