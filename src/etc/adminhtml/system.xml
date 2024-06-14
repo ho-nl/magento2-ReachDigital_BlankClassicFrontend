@@ -20,12 +20,7 @@
                     <comment>Enables the module</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="noindex_nofollow" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Block Indexing</label>
-                    <comment>When enabled, forces the robots meta tag to NOINDEX,NOFOLLOW</comment>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                </field>
-                <field id="should_redirect" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+               <field id="should_redirect" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Redirect</label>
                     <comment>When enabled, redirects requests on the classic frontend to the Secure Base Link URL (web/secure/base_link_url)</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
