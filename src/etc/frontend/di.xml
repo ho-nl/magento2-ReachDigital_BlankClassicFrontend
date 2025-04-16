@@ -3,4 +3,11 @@
     <type name="Magento\Framework\View\Result\Page">
         <plugin name="ReachDigitalPreventFrontendLayoutRendering" type="ReachDigital\BlankClassicFrontend\Plugin\PreventLayoutRendering"/>
     </type>
+    <type name="ReachDigital\BlankClassicFrontend\Plugin\PreventLayoutRendering">
+        <arguments>
+            <argument name="allowedRoutes" xsi:type="array">
+                <item name="swagger" xsi:type="string">swagger</item>
+            </argument>
+        </arguments>
+    </type>
 </config>

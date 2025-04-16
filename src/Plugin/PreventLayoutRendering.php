@@ -9,19 +9,18 @@ use Magento\Store\Model\ScopeInterface;
 
 class PreventLayoutRendering
 {
-    protected ScopeConfigInterface $scopeConfig;
-
-    const allowedRoutes = [
-        'swagger',
-    ];
+    private ScopeConfigInterface $scopeConfig;
     private RequestHttp $request;
+    private array $allowedRoutes;
 
     public function __construct (
         ScopeConfigInterface $scopeConfig,
-        RequestHttp $request
+        RequestHttp $request,
+        array $allowedRoutes = []
     ) {
         $this->scopeConfig = $scopeConfig;
         $this->request = $request;
+        $this->allowedRoutes = $allowedRoutes;
     }
 
     public function afterRenderResult(
@@ -29,11 +28,11 @@ class PreventLayoutRendering
         $result,
         $response
     ) {
-        $shouldBlankFrontend = $this->scopeConfig->isSetFlag("blank_classic_frontend/general/enabled", ScopeInterface::SCOPE_STORE);
-        $shouldRedirect = $this->scopeConfig->isSetFlag("blank_classic_frontend/general/should_redirect", ScopeInterface::SCOPE_STORE);
+        $shouldBlankFrontend = $this->scopeConfig->isSetFlag('blank_classic_frontend/general/enabled', ScopeInterface::SCOPE_STORE);
+        $shouldRedirect = $this->scopeConfig->isSetFlag('blank_classic_frontend/general/should_redirect', ScopeInterface::SCOPE_STORE);
 
         if ($shouldBlankFrontend) {
-            if ($this->routeIsAllowed()) {
+            if ($this->routeIsAllowed($this->request->getRouteName())) {
                 return $result;
             }
             /** @var \Magento\Framework\App\Response\Http $response */
@@ -48,8 +47,8 @@ class PreventLayoutRendering
         return $result;
     }
 
-    private function routeIsAllowed(): bool
+    public function routeIsAllowed(string $routeName): bool
     {
-        return in_array($this->request->getRouteName(), self::allowedRoutes);
+        return in_array($routeName, $this->allowedRoutes);
     }
 }
