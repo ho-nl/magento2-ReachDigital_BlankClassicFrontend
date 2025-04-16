@@ -13,9 +13,6 @@ To enable page layout rendering for specific routes, these can be injected into 
 ```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <type name="Magento\Framework\View\Result\Page">
-        <plugin name="ReachDigitalPreventFrontendLayoutRendering" type="ReachDigital\BlankClassicFrontend\Plugin\PreventLayoutRendering"/>
-    </type>
     <type name="ReachDigital\BlankClassicFrontend\Plugin\PreventLayoutRendering">
         <arguments>
             <argument name="allowedRoutes" xsi:type="array">
