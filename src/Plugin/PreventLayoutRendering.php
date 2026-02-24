@@ -32,7 +32,7 @@ class PreventLayoutRendering
         $shouldRedirect = $this->scopeConfig->isSetFlag('blank_classic_frontend/general/should_redirect', ScopeInterface::SCOPE_STORE);
 
         if ($shouldBlankFrontend) {
-            if ($this->routeIsAllowed($this->request->getRouteName())) {
+            if ($this->request->getRouteName() && $this->routeIsAllowed($this->request->getRouteName())) {
                 return $result;
             }
             /** @var \Magento\Framework\App\Response\Http $response */
